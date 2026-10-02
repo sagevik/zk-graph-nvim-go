@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>zk-graph</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="vendor/vis-network.min.js"></script>
+</head>
+<body>
+  <div id="graph" aria-label="Note graph"></div>
+
+  <div id="loading">Loading notes</div>
+  <div id="banner" role="alert" hidden></div>
+  <div id="toast" aria-live="polite"></div>
+
+  <div id="zkf">
+    <button id="zkf-toggle" type="button" aria-controls="zkf-panel">Filter</button>
+    <div id="zkf-panel">
+      <input id="zkf-search" type="search" list="zkf-all" autocomplete="off"
+        aria-label="Add tag to filter">
+      <datalist id="zkf-all"></datalist>
+      <div id="zkf-extra" class="zkf-group" aria-label="Selected tags"></div>
+      <div id="zkf-top" class="zkf-group" aria-label="Most used tags"></div>
+      <div class="zkf-foot">
+        <select id="zkf-mode" aria-label="Tag match mode">
+          <option value="any">Any tag</option>
+          <option value="all">All tags</option>
+        </select>
+        <select id="zkf-scope" aria-label="Scope">
+          <option value="0">All notes</option>
+          <option value="1">1 link away</option>
+          <option value="2">2 links away</option>
+          <option value="3">3 links away</option>
+        </select>
+        <button id="zkf-clear" type="button">Clear</button>
+      </div>
+      <div class="zkf-foot">
+        <button id="zkf-colors" type="button" aria-pressed="true">Colors</button>
+        <button id="zkf-follow" type="button" aria-pressed="true">Follow</button>
+        <button id="zkf-fit" type="button">Fit</button>
+        <span id="zkf-count"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
